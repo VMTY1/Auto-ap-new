@@ -60,7 +60,7 @@ I can approve users in Groups/Channels.Add me to your chat and promote me to adm
     )
 
 
-AUTH_USER = [int(user) for user in evn.get('AUTH_USERS', '').split()]
+AUTH_USER = [int(user) for user in evn.get('AUTH_USERS', 0).split(' ')]
 @app.on_message(filters.command('broadcast') & filters.private & filters.incoming & filters.chat(AUTH_USER))
 async def broadcast(c, m):
     if not m.reply_to_message:
