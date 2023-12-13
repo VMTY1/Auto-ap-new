@@ -25,7 +25,7 @@ async def autoapprove(c, m):
             InlineKeyboardButton("📮 𝗨𝗣𝗗𝗔𝗧𝗘𝗦 📮", url="https://t.me/M_MOVIES_23"), InlineKeyboardButton("🎭 𝗦𝗨𝗣𝗣𝗢𝗥𝗧 🎭", url="https://t.me/mallumovies_1")
         ]]
         markup = InlineKeyboardMarkup(button)
-        caption = f'𝐇𝐞𝐲 {m.from_user.mention()}\n\n𝐘𝐨𝐮𝐫 𝐑𝐞𝐪𝐮𝐞𝐬𝐭 𝐅𝐨𝐫 {m.chat.title} 𝐈𝐬 𝐀𝐜𝐜𝐞𝐩𝐭𝐞𝐝 ✅'
+        caption = f'<b>𝐇𝐞𝐲 {m.from_user.mention()}\n\n𝐘𝐨𝐮𝐫 𝐑𝐞𝐪𝐮𝐞𝐬𝐭 𝐅𝐨𝐫 {m.chat.title} 𝐈𝐬 𝐀𝐜𝐜𝐞𝐩𝐭𝐞𝐝 ✅</b>'
         await c.send_photo(
             m.from_user.id, 
             photo='https://telegra.ph/file/d3028731972d2e0f64252.jpg', 
@@ -42,7 +42,7 @@ async def autoapprove(c, m):
 
 @app.on_message(filters.command('start') & filters.private & filters.incoming)
 async def start(c, m):
-    text = f'''🤝 𝐇𝐞𝐥𝐥𝐨 {m.from_user.mention()} \n\n🐞 𝐈 𝐚𝐦 𝐀𝐮𝐭𝐨 𝐑𝐞𝐪𝐮𝐞𝐬𝐭 𝐀𝐜𝐜𝐞𝐩𝐭 𝐁𝐨𝐭 𝐖𝐢𝐭𝐡 𝐖𝐨𝐫𝐤𝐢𝐧𝐠 𝐅𝐨𝐫 𝐀𝐥𝐥 𝐂𝐡𝐚𝐧𝐧𝐞𝐥. 𝐀𝐝𝐝 𝐌𝐞 𝐈𝐧 𝐘𝐨𝐮𝐫 𝐂𝐡𝐚𝐧𝐧𝐞𝐥 𝐓𝐨 𝐔𝐬𝐞 😍'''
+    text = f'''<b>🤝 𝐇𝐞𝐥𝐥𝐨 {m.from_user.mention()} \n\n🐞 𝐈 𝐚𝐦 𝐀𝐮𝐭𝐨 𝐑𝐞𝐪𝐮𝐞𝐬𝐭 𝐀𝐜𝐜𝐞𝐩𝐭 𝐁𝐨𝐭 𝐖𝐢𝐭𝐡 𝐖𝐨𝐫𝐤𝐢𝐧𝐠 𝐅𝐨𝐫 𝐀𝐥𝐥 𝐂𝐡𝐚𝐧𝐧𝐞𝐥. 𝐀𝐝𝐝 𝐌𝐞 𝐈𝐧 𝐘𝐨𝐮𝐫 𝐂𝐡𝐚𝐧𝐧𝐞𝐥 𝐓𝐨 𝐔𝐬𝐞 😍</b>'''
     button = [[        
        InlineKeyboardButton('⚚ 𝗔𝗱𝗱 𝘁𝗼 𝗚𝗿𝗼𝘂𝗽 ⚚', url='https://t.me/MM_Accept_bot?startgroup=Bots4Sale&admin=invite_users+manage_chat'),
        InlineKeyboardButton('⚚ 𝗔𝗱𝗱 𝘁𝗼 𝗖𝗵𝗮𝗻𝗻𝗲𝗹 ⚚', url='https://t.me/MM_Accept_bot?startchannel=Bots4Sale&admin=invite_users+manage_chat')
@@ -56,6 +56,7 @@ async def start(c, m):
         reply_markup=InlineKeyboardMarkup(button),
         quote=True
     )
+    return await m.delete()
 
 
 AUTH_USER = [int(user) for user in evn.get('AUTH_USERS', 0).split(' ')]
