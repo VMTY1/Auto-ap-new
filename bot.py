@@ -42,7 +42,7 @@ async def autoapprove(c, m):
 
 @app.on_message(filters.command('start') & filters.private & filters.incoming)
 async def start(c, m):
-    text = f'''<b>🤝 𝐇𝐞𝐥𝐥𝐨 {m.from_user.mention()} \n\n🐞 𝐈 𝐚𝐦 𝐀𝐮𝐭𝐨 𝐑𝐞𝐪𝐮𝐞𝐬𝐭 𝐀𝐜𝐜𝐞𝐩𝐭 𝐁𝐨𝐭 𝐖𝐢𝐭𝐡 𝐖𝐨𝐫𝐤𝐢𝐧𝐠 𝐅𝐨𝐫 𝐀𝐥𝐥 𝐂𝐡𝐚𝐧𝐧𝐞𝐥. 𝐀𝐝𝐝 𝐌𝐞 𝐈𝐧 𝐘𝐨𝐮𝐫 𝐂𝐡𝐚𝐧𝐧𝐞𝐥 𝐓𝐨 𝐔𝐬𝐞 😍</b>'''
+    text = f'''<b>🤝 𝐇𝐞𝐥𝐥𝐨 {m.from_user.mention()} \n\n🐞 𝐈 𝐚𝐦 𝐀𝐮𝐭𝐨 𝐑𝐞𝐪𝐮𝐞𝐬𝐭 𝐀𝐜𝐜𝐞𝐩𝐭 𝐁𝐨𝐭 𝐖𝐢𝐭𝐡 𝐖𝐨𝐫𝐤𝐢𝐧𝐠 𝐅𝐨𝐫 𝐀𝐥𝐥 𝐂𝐡𝐚𝐧𝐧𝐞𝐥 & 𝐆𝐫𝐨𝐮𝐩. 𝐀𝐝𝐝 𝐌𝐞 𝐈𝐧 𝐘𝐨𝐮𝐫 𝐂𝐡𝐚𝐧𝐧𝐞𝐥 𝐓𝐨 𝐔𝐬𝐞 😍</b>'''
     button = [[        
        InlineKeyboardButton('⚚ 𝗔𝗱𝗱 𝘁𝗼 𝗚𝗿𝗼𝘂𝗽 ⚚', url='https://t.me/MM_Accept_bot?startgroup=Bots4Sale&admin=invite_users+manage_chat'),
        InlineKeyboardButton('⚚ 𝗔𝗱𝗱 𝘁𝗼 𝗖𝗵𝗮𝗻𝗻𝗲𝗹 ⚚', url='https://t.me/MM_Accept_bot?startchannel=Bots4Sale&admin=invite_users+manage_chat')
