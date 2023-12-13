@@ -22,15 +22,13 @@ async def autoapprove(c, m):
     try:
         await c.approve_chat_join_request(m.chat.id, m.from_user.id)
         button = [[
-            InlineKeyboardButton('🎬JOIN MOVIE CHANNEL🎬', url='https://t.me/M_MOVIES_23')
-            ],[
-            InlineKeyboardButton('📽️JOIN MOVIE GROUP📽️', url='https://t.me/mallumovies_1')
+            InlineKeyboardButton("📮 𝗨𝗣𝗗𝗔𝗧𝗘𝗦 📮", url="https://t.me/M_MOVIES_23"), InlineKeyboardButton("🎭 𝗦𝗨𝗣𝗣𝗢𝗥𝗧 🎭", url="https://t.me/mallumovies_1")
         ]]
         markup = InlineKeyboardMarkup(button)
-        caption = f'Hello {m.from_user.mention()}\nYou Request To Join {m.chat.title} Was Approved.'
+        caption = f'𝐇𝐞𝐲 {m.from_user.mention()}\n\n𝐘𝐨𝐮𝐫 𝐑𝐞𝐪𝐮𝐞𝐬𝐭 𝐅𝐨𝐫 {m.chat.title} 𝐈𝐬 𝐀𝐜𝐜𝐞𝐩𝐭𝐞𝐝 ✅'
         await c.send_photo(
             m.from_user.id, 
-            photo='https://telegra.ph/file/f7738f04ea74e16c9db02.jpg', 
+            photo='https://telegra.ph/file/d3028731972d2e0f64252.jpg', 
             caption=caption, 
             reply_markup=markup
         )
@@ -44,16 +42,16 @@ async def autoapprove(c, m):
 
 @app.on_message(filters.command('start') & filters.private & filters.incoming)
 async def start(c, m):
-    text = f'''Hello {m.from_user.mention()} 👋
-I'm an auto approve Admin Join Requests Bot.
-I can approve users in Groups/Channels.Add me to your chat and promote me to admin with add members permission.'''
-    button = [[
-            InlineKeyboardButton('💎JOIN GROUP✅️', url='https://t.me/mallumovies_1')
-            ],[
-            InlineKeyboardButton('📣UPDATES🔔', url='https://t.me/M_MOVIES_23')
+    text = f'''🤝 𝐇𝐞𝐥𝐥𝐨 {m.from_user.mention()} \n\n🐞 𝐈 𝐚𝐦 𝐀𝐮𝐭𝐨 𝐑𝐞𝐪𝐮𝐞𝐬𝐭 𝐀𝐜𝐜𝐞𝐩𝐭 𝐁𝐨𝐭 𝐖𝐢𝐭𝐡 𝐖𝐨𝐫𝐤𝐢𝐧𝐠 𝐅𝐨𝐫 𝐀𝐥𝐥 𝐂𝐡𝐚𝐧𝐧𝐞𝐥. 𝐀𝐝𝐝 𝐌𝐞 𝐈𝐧 𝐘𝐨𝐮𝐫 𝐂𝐡𝐚𝐧𝐧𝐞𝐥 𝐓𝐨 𝐔𝐬𝐞 😍'''
+    button = [[        
+       InlineKeyboardButton('⚚ 𝗔𝗱𝗱 𝘁𝗼 𝗚𝗿𝗼𝘂𝗽 ⚚', url='https://t.me/MM_Accept_bot?startgroup=Bots4Sale&admin=invite_users+manage_chat'),
+       InlineKeyboardButton('⚚ 𝗔𝗱𝗱 𝘁𝗼 𝗖𝗵𝗮𝗻𝗻𝗲𝗹 ⚚', url='https://t.me/MM_Accept_bot?startchannel=Bots4Sale&admin=invite_users+manage_chat')
+    ],[  
+       InlineKeyboardButton("📮 𝗨𝗣𝗗𝗔𝗧𝗘𝗦 📮", url="https://t.me/M_MOVIES_23"), InlineKeyboardButton("🎭 𝗦𝗨𝗣𝗣𝗢𝗥𝗧 🎭", url="https://t.me/mallumovies_1") 
     ]]
-    await m.reply_photo(
-        photo='https://telegra.ph/file/f7738f04ea74e16c9db02.jpg', 
+    m = await m.reply_sticker("CAACAgUAAxkBAAI8T2VkLQxCimPbyxhJuXINXsnjKyNsAAKnAAMEgnsg9bWbdDtN4EEeBA") 
+    await asyncio.sleep(2)
+    await m.reply_photo('https://telegra.ph/file/f466c02f7c390996d83ec.jpg', 
         caption=text,
         reply_markup=InlineKeyboardMarkup(button),
         quote=True
